@@ -429,4 +429,6 @@ Supported versions are: [2.7.6, 2.7.7, 3.0.4, 3.0.5, 3.1.2, 3.1.3]
 
 It will take a while to spin up the Rails application so grab a coffee, sit back and relax. 
 
-If everything works as expected, the application deployment should finish soon and the command should print the url of your app. Visit that in your browser and see the greeting message.
+If everything works as expected, the application deployment should finish soon and the command should print the url of your app (something like https://rails-example.127.0.0.1.sslip.io). 
+
+Visit that in your browser and see the greeting message.

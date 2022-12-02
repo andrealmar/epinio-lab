@@ -432,3 +432,19 @@ It will take a while to spin up the Rails application so grab a coffee, sit back
 If everything works as expected, the application deployment should finish soon and the command should print the url of your app (something like https://rails-example.127.0.0.1.sslip.io). 
 
 Visit that in your browser and see the greeting message.
+
+## DOCKER & LOCAL ENVIRONMENT
+
+### LOCAL
+
+- had to move python to dependencies and change the version to match the version on my machine
+- had to install postgres in order to have the pg_config utility required by some dependency when doing the `conda env create` command
+- had to install Rust compiler
+- Tried to install miniconda via Homebrew but I wasn't successful because of Architecture problems (ARM vs x86_64) so I had to install miniconda by downloading the `pkg` file compatible with the python version I was using (installing via homebrew didn't work) 
+- had to type this command: `pip install psycopg2-binary --force-reinstall --no-cache-dir` to force reinstall of `psycopg2-binary` in my local machine and fix the `libpq5 not found` error. 
+
+### DOCKER
+
+- I had to include the postgresql package in the main Dockerfile
+- I've installed `RUN pip install psycopg2 --force-reinstall --no-cache-dir` on orders service Dockerfile
+- on docker-compose I changed the postgres container version to 11 (it was getting the latest version)
